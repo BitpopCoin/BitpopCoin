@@ -10,12 +10,12 @@ obj/rpcmining.o: rpcmining.cpp main.h bignum.h serialize.h allocators.h \
  sph_types.h sph_bmw.h sph_groestl.h sph_jh.h sph_keccak.h sph_skein.h \
  sph_luffa.h sph_cubehash.h sph_shavite.h sph_simd.h sph_echo.h db.h \
  txdb.h txdb-leveldb.h \
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/db.h \
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/iterator.h \
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/slice.h \
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/status.h \
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/options.h \
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/write_batch.h init.h \
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/db.h \
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/iterator.h \
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/slice.h \
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/status.h \
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/options.h \
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/write_batch.h init.h \
  wallet.h ui_interface.h walletdb.h base58.h miner.h bitcoinrpc.h \
  json/json_spirit_reader_template.h json/json_spirit_value.h \
  json/json_spirit_error_position.h json/json_spirit_writer_template.h \
@@ -32,12 +32,12 @@ rpcmining.cpp main.h bignum.h serialize.h allocators.h :
  sph_types.h sph_bmw.h sph_groestl.h sph_jh.h sph_keccak.h sph_skein.h :
  sph_luffa.h sph_cubehash.h sph_shavite.h sph_simd.h sph_echo.h db.h :
  txdb.h txdb-leveldb.h :
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/db.h :
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/iterator.h :
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/slice.h :
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/status.h :
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/options.h :
- /home/mike/BitpopCoin/src/leveldb/include/leveldb/write_batch.h init.h :
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/db.h :
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/iterator.h :
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/slice.h :
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/status.h :
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/options.h :
+ /home/aayan/RNGcoin/src/leveldb/include/leveldb/write_batch.h init.h :
  wallet.h ui_interface.h walletdb.h base58.h miner.h bitcoinrpc.h :
  json/json_spirit_reader_template.h json/json_spirit_value.h :
  json/json_spirit_error_position.h json/json_spirit_writer_template.h :

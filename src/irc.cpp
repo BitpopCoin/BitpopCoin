@@ -189,7 +189,7 @@ bool GetIPFromIRC(SOCKET hSocket, string strMyName, CNetAddr& ipRet)
 void ThreadIRCSeed(void* parg)
 {
     // Make this thread recognisable as the IRC seeding thread
-    RenameThread("BitpopCoin-ircseed");
+    RenameThread("RNGcoin-ircseed");
 
     try
     {
@@ -302,16 +302,16 @@ void ThreadIRCSeed2(void* parg)
         }
 
         if (fTestNet) {
-            Send(hSocket, "JOIN #BitpopCoinTEST\r");
-            Send(hSocket, "WHO #BitpopCoinTEST\r");
+            Send(hSocket, "JOIN #RNGcoinTEST\r");
+            Send(hSocket, "WHO #RNGcoinTEST\r");
         } else {
-            // randomly join #BitpopCoin00-#BitpopCoin05
+            // randomly join #RNGcoin00-#RNGcoin05
             //int channel_number = GetRandInt(5);
             int channel_number = 0;
             // Channel number is always 0 for initial release
             //int channel_number = 0;
-            Send(hSocket, strprintf("JOIN #BitpopCoin%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #BitpopCoin%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("JOIN #RNGcoin%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #RNGcoin%02d\r", channel_number).c_str());
         }
 
         int64_t nStart = GetTime();

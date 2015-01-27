@@ -40,8 +40,8 @@ CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // "standard" scrypt target limit
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
-unsigned int nTargetSpacing = 5 * 60; // 5 minutes
-unsigned int nStakeMinAge = 8 * 60 * 60; // 8 hours
+unsigned int nTargetSpacing = 1 * 60; // 1 minute
+unsigned int nStakeMinAge = 4 * 60 * 60; // 4 hours
 unsigned int nStakeMaxAge = 30 * 24 * 60 * 60;           // 30 days
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
@@ -56,6 +56,7 @@ uint256 hashBestChain = 0;
 CBlockIndex* pindexBest = NULL;
 int64_t nTimeBestReceived = 0;
 
+
 CMedianFilter<int> cPeerBlockCounts(5, 0); // Amount of blocks that other nodes claim to have
 
 map<uint256, CBlock*> mapOrphanBlocks;
@@ -68,7 +69,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "BitpopCoin Signed Message:\n";
+const string strMessageMagic = "RNGcoin Signed Message:\n";
 
 // Settings
 int64_t nTransactionFee = MIN_TX_FEE;
@@ -966,7 +967,7 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int64_t nFees)
 {
-    int64_t nSubsidy = 500 * COIN;
+    int64_t nSubsidy = 50 * COIN;
 
 	
     if (fDebug && GetBoolArg("-printcreation"))
@@ -2395,7 +2396,7 @@ bool CheckDiskSpace(uint64_t nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low!");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "BitpopCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+        uiInterface.ThreadSafeMessageBox(strMessage, "RNGcoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
         StartShutdown();
         return false;
     }
@@ -2486,7 +2487,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "Beat that!";
         CTransaction txNew;
-        txNew.nTime = 1404762471;
+        txNew.nTime = 1422245362;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2496,12 +2497,12 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1404762480;
+        block.nTime    = 1422245362;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 6869289;
-		if(fTestNet)
+        block.nNonce   = 302917;
+	if(fTestNet)
         {
-            block.nNonce   = 6869289;
+            block.nNonce   = 0;
         }
         if (false  && (block.GetHash() != hashGenesisBlock)) {
 
@@ -2525,7 +2526,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nNonce = %u \n", block.nNonce);
 
         //// debug print
-        assert(block.hashMerkleRoot == uint256("0xd4695cbda427a5da4ca141346d4d040d9a95c22ab71fbe1e8bf6aaefd01365aa"));
+        assert(block.hashMerkleRoot == uint256("0xf7019e9d6f0ccf1863e4864fbde4ab118a6f0df77a76efcd6eed69bd5f55339f"));
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 
         // Start new block file

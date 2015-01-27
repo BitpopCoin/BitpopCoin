@@ -1,27 +1,25 @@
-[BPC] BitpopCoin - A coin for the community, brought to you by a Hero Member.
+[RNG] RNGcoin - A coin for the random.
 
-https://bitcointalk.org/index.php?topic=665896.0
-
-http://www.bitpopcoin.com/
+RNGcoin.github.io/
 
 
  - 5 minute block targets
- - 500,000,000 total BitpopCoins
+ - 500,000,000 total RNGcoins
  - 500 coins per generated block
- - Difficulty retargets every 8 hours
+ - Difficulty retargets every 2 minutes
  - Algorithm: X11
  - PoS: 7% (8 hours - 30 days)
  - 288 blocks per day
- - There is no pre-mine!
+ - Only 4 blocks pre-mine
  - Not Scrypt, ASIC resistant!
- - Launched on July 8, 2014.
+ - Launched on Jan. 30, 2015.
 
 
-Donate: BSeyCRUHrr2Mi5RmzZkm21Q963LCH2x2bF
+Donate Bitcoin: 1JzjrkV7pPJMbMYKRp9XWZrznjcH6V2Zxu
 
 -----------------------------------------------------------------------------------
 
-bitpopcoin.conf
+RNGcoin.conf
 
 server=1
 
@@ -45,24 +43,18 @@ maxconnections=32
 
 upnp=1
 
-addnode=node.bitpopcoin.com
-
-addnode=node2.bitpopcoin.com
-
-addnode=altpooler.com:19013
-
 -----------------------------------------------------------------------------------
 
 Compiling
 
-git clone https://github.com/BitpopCoin/BitpopCoin.git
+git clone https://github.com/RNGcoin/RNGcoin.git
 
-cd BitpopCoin/src
+cd RNGcoin/src
 
 make -f makefile.unix
 
-strip BitpopCoind
+strip RNGcoind
 
-./BitpopCoind
+./RNGcoind
 
-./BitpopCoind getinfo
+./RNGcoind getinfo
