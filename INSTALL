@@ -1,9 +1,9 @@
-Building hackcoin
+To build RNGcoind (daemon), go to /src/ and do 
+make -f Makefile.unix if on Lunix systems
+make -f Makefile.osx if on OSX
 
-See doc/readme-qt.rst for instructions on building hackcoin QT,
-the intended-for-end-users, nice-graphical-interface, reference
-implementation of hackcoin.
+To build QT, (only managed to build linux right now)
+$qmake RNGcoin-qt.pro
+$make
 
-See doc/build-*.txt for instructions on building hackcoind,
-the intended-for-services, no-graphical-interface, reference
-implementation of hackcoin.
+make sure you do those in order
